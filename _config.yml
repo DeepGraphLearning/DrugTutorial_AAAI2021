@@ -1,0 +1,21 @@
+include:
+  - _includes
+  - _pages
+  - .doctrees
+  - _images
+  - _modules
+  - _sources
+  - _static
+keep_files:
+  - drugdiscovery/doc
+
+sass:
+  style: :compressed
+
+theme: jekyll-theme-primer
+  
+title: MilaGraphal
+description: Project page of MilaGraph group
+
+url: "https://deepgraphlearning.github.io"
+baseurl: "/tutorial"

@@ -1,0 +1,6 @@
+@article{wang2019kepler,
+  title={KEPLER: A Unified Model for Knowledge Embedding and Pre-trained Language Representation},
+  author={Wang, Xiaozhi and Gao, Tianyu and Zhu, Zhaocheng and Liu, Zhiyuan and Li, Juanzi and Tang, Jian},
+  journal={arXiv preprint arXiv:1911.06136},
+  year={2019}
+}
