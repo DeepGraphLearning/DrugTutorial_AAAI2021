@@ -1,5 +1,0 @@
-drugdiscovery.models
-====================
-
-.. automodule:: drugdiscovery.models
-    :members:

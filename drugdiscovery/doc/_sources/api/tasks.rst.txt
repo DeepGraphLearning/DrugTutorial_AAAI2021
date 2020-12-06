@@ -1,5 +1,0 @@
-drugdiscovery.tasks
-===================
-
-.. automodule:: drugdiscovery.tasks
-    :members:

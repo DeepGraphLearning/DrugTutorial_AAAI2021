@@ -1,6 +1,0 @@
-drugdiscovery.core
-==================
-
-.. automodule:: drugdiscovery.core
-    :members:
-    :private-members: _MetaContainer
