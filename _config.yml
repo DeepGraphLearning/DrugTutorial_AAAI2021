@@ -8,7 +8,7 @@ include:
 sass:
   style: :compressed
 
-theme: jekyll-theme-primer
+theme: jekyll-theme-cayman
 
 description: Website for Drug Discovery Tutorial, AAAI 2021
 
