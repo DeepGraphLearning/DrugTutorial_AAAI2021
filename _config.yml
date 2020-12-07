@@ -1,4 +1,5 @@
 include:
+  - .doctrees
   - _images
   - _modules
   - _sources
@@ -7,7 +8,7 @@ include:
 sass:
   style: :compressed
 
-theme: jekyll-theme-cayman
+theme: jekyll-theme-primer
 
 description: Website for Drug Discovery Tutorial, AAAI 2021
 
