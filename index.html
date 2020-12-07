@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      <h1>
+        Artificial Intelligence for Drug Discovery, AAAI 2021
+      </h1>
+      
+      
+      
+      <p><strong>Keyworkds:</strong><br />
+Artificial intelligence, machine learning, deep learning, drug discovery, graph representation learning, network medicine.</p>
+
+<p><strong>Jian Tang, Fei Wang, Feixiong Cheng</strong></p>
+
+<h2 id="abstract">Abstract</h2>
+<p>Drug discovery is a long and costly process, taking on average 10 years and 2.5 billion dollars to develop a new drug.
+Artificial intelligence has the potential to significantly accelerate the process of drug discovery by analyzing a large amount of data generated in the biomedical domain such as bioassays, chemical experiments, and biomedical literature.
+Recently, there is a growing interesting in developing AI techniques for drug discovery in many different communities including machine learning, data mining, and biomedical community. In this tutorial, we will provide a detailed introduction to key problems in drug discovery such as molecular property prediction, de novo molecular design and molecular optimization, retrosynthesis reaction and prediction, and drug repurposing and combination, and also key technique advancements with artificial intelligence for these problems. This tutorial can be served as introduction materials for both computer scientist interested in drug discovery as well as drug discovery practitioners for learning the latest AI techniques along this direction.</p>
+
+<h2 id="detailed-description">Detailed description</h2>
+
+<p>Developing new drugs is a time-consuming and expensive process due to the low rate of success in clinical trials.
+As a large number of data are generated in  the biomedical domain such as bioassays, chemical experiments, and biomedical scientific literature, recently there is a surge of interest in leveraging artificial intelligence for accelerating the process of drug discovery.
+A variety of studies have been conducted in different communities such as leveraging existing methods for new applications in biomedical community as well as developing new techniques for existing problems in machine learning and data mining community.
+However, a systematic introduction to the overall progress of AI for drug discovery including the key problems and the latest AI techniques in this domain is lacking, which could benefit researchers across different communities.</p>
+
+<p>This tutorial aims to give a comprehensive introduction to the current progress of artificial intelligence for drug discovery. The main emphasis will be giving an introduction to the key problems in drug discovery as well as the latest machine learning techniques for these problems.
+The tutorial will be beneficial to both artificial intelligence researchers who are interested in drug discovery—who will be able to recognize important problems to work on through this tutorial—as well as drug discovery practitioners, who will learn the latest technical advancement.</p>
+
+<p>The first part of the tutorial will be introducing some basics of drug discovery and artificial intelligence.
+We will begin the tutorial with an introduction to the overall process of drug discovery and then identify some fundamental machine learning problems such as molecule properties prediction <a class="citation" href="#gilmer2017neural">(Gilmer et al., 2017)</a>, de novo molecule generation and optimization <a class="citation" href="#jin2018junction">(Jin et al., 2018)</a><a class="citation" href="#you2018graph">(You et al., 2018)</a>, reaction prediction and retrosyntheis <a class="citation" href="#jin2017predicting">(Jin et al., 2017)</a><a class="citation" href="#shhi2020a">(Shi et al., 2020)</a>, drug repurposing and combination <a class="citation" href="#zhou2020artificial">(Zhou et al., 2020)</a><a class="citation" href="#cheng2018network">(Cheng et al., 2018)</a><a class="citation" href="#cheng2019network">(Cheng et al., 2019)</a>.
+Afterwards, we will give a brief introduction to some essential machine learning techniques for drug discovery, especially graph representation learning techniques <a class="citation" href="#sun2020graph">(Sun et al., 2020)</a>.</p>
+
+<p>The second part will give a detailed introduction to the latest AI techniques for each key problem introduced in the first part.
+For molecule properties prediction, we will introduce existing techniques based on graph neural networks or neural message passing framework <a class="citation" href="#gilmer2017neural">(Gilmer et al., 2017)</a>, which are mainly trained in supervised fashion. Due to the limited amount of labeled data in drug discovery, there are recently increasing work on self-supervised <a class="citation" href="#hu2019strategies">(Hu et al., 2019)</a><a class="citation" href="#sun2019infograph">(Sun et al., 2020)</a> or semi-supervised learning <a class="citation" href="#sun2019infograph">(Sun et al., 2020)</a> techniques for molecule properties prediction.
+For molecular generation and optimization, different types of generative models for molecule generation will be introduced including the ones based on variational autoencoder (JTVAE <a class="citation" href="#jin2018junction">(Jin et al., 2018)</a>), autoregressive based methods (GCPN <a class="citation" href="#you2018graph">(You et al., 2018)</a>), and the recent normalizing flow based methods (GraphAF <a class="citation" href="#shi2020graphaf">(Shi et al., 2020)</a>, MoFlow <a class="citation" href="#zang2020moflow">(Zang &amp; Wang, 2020)</a>). As for retrosynthesis and reaction prediction, we will introduce both template-based <a class="citation" href="#jin2017predicting">(Jin et al., 2017)</a><a class="citation" href="#sacha2020molecule">(Sacha et al., 2020)</a> and template-independent approaches <a class="citation" href="#dai2019retrosynthesis">(Dai et al., 2019)</a><a class="citation" href="#schwaller2019molecular">(Schwaller et al., 2019)</a><a class="citation" href="#shhi2020a">(Shi et al., 2020)</a><a class="citation" href="#sacha2020molecule">(Sacha et al., 2020)</a>.</p>
+
+<p>Besides approaches for developing new drugs, another important category of techniques for drug discovery is drug repurposing, which focuses on identifying existing approved drugs for treating new diseases.
+We will introduce traditional network-based approaches <a class="citation" href="#cheng2018network">(Cheng et al., 2018)</a> and recent approaches based on graph neural networks <a class="citation" href="#gysi2020network">(Gysi et al., 2020)</a>.
+We will also introduce a case study on drug repurposing for COVID-19 <a class="citation" href="#zhou2020networkb">(Zhou et al., 2020)</a><a class="citation" href="#gysi2020network">(Gysi et al., 2020)</a>.</p>
+
+<p>We will conclude the tutorial by introducing important data sources and data sets, discussing open challenges and pointing out future directions.</p>
+
+<h2 id="tentative-outline">Tentative outline</h2>
+<p>The proposed tutorial would be 3.5 hours in length. 
+An outline of the tutorial (including an approximate breakdown by presenter) is as follows:</p>
+
+<ul>
+  <li>Drug Discovery Overview [20 min, presented by Feixiong]</li>
+  <li>Deep Learning, Traditional Network-based Methods, Graph Representation Learning [15 min, presented by Fei]
+    <ul>
+      <li>Convolutional Neural Networks and Recurrent Neural Networks</li>
+      <li>Graph Convolutional Networks [GCN <a class="citation" href="#kipf2016semi">(Kipf &amp; Welling, 2016)</a>, MPNN <a class="citation" href="#gilmer2017neural">(Gilmer et al., 2017)</a>, GIN~<a class="citation" href="#xu2018powerful">(Xu et al., 2018)</a>]</li>
+    </ul>
+  </li>
+  <li>Molecule Properties Prediction [30 min, presented by Jian]
+    <ul>
+      <li>Variational autoencoder-based approach <a class="citation" href="#jin2018junction">(Jin et al., 2018)</a></li>
+      <li>Autoregressive methods [GCPN <a class="citation" href="#you2018graph">(You et al., 2018)</a>]</li>
+      <li>Normalizing Flow-based approaches [GraphAF <a class="citation" href="#shi2020graphaf">(Shi et al., 2020)</a>, MoFlow <a class="citation" href="#zang2020moflow">(Zang &amp; Wang, 2020)</a>]</li>
+    </ul>
+  </li>
+  <li>De novo Molecule Generation and Optimization. [40 min, presented by Jian and Fei]
+    <ul>
+      <li>Variational autoencoder-based approach [JTVAE <a class="citation" href="#jin2018junction">(Jin et al., 2018)</a>]</li>
+      <li>Autoregressive methods [GCPN <a class="citation" href="#you2018graph">(You et al., 2018)</a>]</li>
+      <li>Normalizing Flow-based approaches [GraphAF <a class="citation" href="#shi2020graphaf">(Shi et al., 2020)</a>, MoFlow <a class="citation" href="#zang2020moflow">(Zang &amp; Wang, 2020)</a>]</li>
+    </ul>
+  </li>
+  <li>Reaction Prediction and Retrosynthesis. [30 min, presented by Jian]
+    <ul>
+      <li>Reaction prediction <a class="citation" href="#jin2017predicting">(Jin et al., 2017)</a><a class="citation" href="#schwaller2019molecular">(Schwaller et al., 2019)</a><a class="citation" href="#sacha2020molecule">(Sacha et al., 2020)</a>
+        <ul>
+          <li>Retrosynthesis <a class="citation" href="#dai2019retrosynthesis">(Dai et al., 2019)</a><a class="citation" href="#shhi2020a">(Shi et al., 2020)</a><a class="citation" href="#sacha2020molecule">(Sacha et al., 2020)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Multiomics and Clinical Data-based Drug Repurposing. [45 min, presented by Feixiong and Fei]</li>
+  <li>Other Topics. [15 min, presented by Fei]</li>
+  <li>Conclusion and Future Directions. [15 min, presented by Fei]</li>
+</ul>
+
+<h2 id="goals-and-intended-audience">Goals and Intended Audience</h2>
+
+<p>Developing artificial intelligence techniques for drug discovery has dramatically increased in popularity over the past three years, with dozens of papers on the topic appearing at top venues—such as AAI, IJCAI, NeurIPS, ICML, ICLR, and KDD—in the last year alone. These advancements are revolutionaizing a number of tasks in drug discovery, including molecule properties prediction, de novo molecular design and optimization, retrosynthesis prediction, to name a few. The popularity of AI for drug discovery across the machine learning, data mining, and biomedical communities has also led to an overwhelming diversity of closely related methods, and a tutorial synthesizing this diversity will be invaluable to AAAI researchers who are new to the area, while also being useful to experts who may not be familiar with connections between the various methodologies.</p>
+
+<p><strong>Prequisite knowledge</strong> The intended audience for the tutorial are participants that want to get up-to-speed with recent advancements in AI for drug discovery. The tutorial is targeted towards an entry-level audience, with knowledge of the fundamentals of machine learning and deep learning; e.g., empirical risk minimization and familiarity with  LSTMS or CNNs. However, we expect that experts in the area will also benefit from the tutorial’s synthesis of disparate techniques and problems.</p>
+
+<p><strong>Learning outcomes</strong> The primary learning outcome will be to familiarize attendees with the key problems in drug discovery and imbue the audience with a high-level understanding of the conceptual relationships between these problems. A second key learning outcome will be learning the latest AI techniques for these problems and start to (re)implement standard algorithms in this space with the data sources and open source codes provided in this tutorial.</p>
+
+<h2 id="previous-versions">Previous versions</h2>
+<p><a href="https://jian-tang.com/">Jian Tang</a> (with <a href="https://mila.quebec/en/person/william-l-hamilton/">William L. Hamilton</a>) presented a related tutorial on Graph Representation Learning at AAAI 2019, in which a topic on molecular graph generation with deep generative models is covered. The tutorial was 3.5 hours and had approximately 400 attendees. The slides are available at <a href="https://jian-tang.com/files/AAAI19/aaai-grltutorial-part3-generation.pdf">here</a>.</p>
+
+<p>Fei Wang presented a tutorial alone on machine learning for electronic health records in AAAI 2014 and machine learning for precision medicine in AAAI 2019. Both are 3.5 hours and attracted more than 200 participants. He also presented a tutorial on differential deep learning on graphs and its applications on AAAI 2019 with Chengxi Zang, which was 3.5 hours and attracted more than 200 participants as well. <a href="http://www.calvinzang.com/DDLG_AAAI_2020.html">Link</a> to previous tutorial.</p>
+
+<h2 id="organizers">Organizers</h2>
+
+<ul>
+  <li><a href="https://jian-tang.com/">Jian Tang</a>:<br />
+    <ul>
+      <li><strong>Brief biograph.</strong> Jian Tang is currently an assistant professor at Montr'eal Institute for Learning Algorithms (Mila)—a research institute focusing on deep learning and reinforcement learning led by Turing Award Winner Yoshua Bengio—starting from December 2017. His research focuses on graph representation learning, graph neural networks, drug discovery, and knowledge graphs. He is named to the first cohort of Canada CIFAR Artificial Intelligence Chairs (CIFAR AI Research Chair). He was a research fellow in University of Michigan and Carnegie Mellon University. He was a researcher in Microsoft Research Asia for two years. He received the best paper award of ICML’14 and nominated for the best paper of WWW’16. Most of his papers are published in top-tier venues across artificial intelligence, machine learning and data mining conferences (ICML, NeurIPS, ICLR, AAAI, IJCAI, KDD, WWW, and WSDM). He co-organized a tutorial on graph representation learning at KDD 2017 and AAAI 2019, organized a few workshops on graph representation learning at SDM 2019, CIKM 2019, AAAI 2020, and ICML 2020. He published quite a few representative work on graph representation learning (including LINE, LargeVis, RotatE) and recently has been very actively working on graph representation learning for drug discovery.</li>
+    </ul>
+  </li>
+  <li><a href="https://wcm-wanglab.github.io/index.html">Fei Wang</a>:<br />
+    <ul>
+      <li><strong>Brief biograph.</strong>  Fei Wang is currently an Associate Professor of Health Informatics in Department of Population Health Sciences, Weill Cornell Medicine, Cornell University. His major research interest is data mining and its applications in health data science. He has published more than 250 papers in AI and medicine, which have received more than 12.7K citations <a href="https://scholar.google.com/citations?hl=en&amp;user=FjCbjDYAAAAJ">Google Scholar</a>. His H-index is 56. His papers have won 8 best paper awards at top international conferences on data mining and medical informatics. His team won the championship of the NIPS/Kaggle Challenge on Classification of Clinically Actionable Genetic Mutations in 2017 and Parkinson’s Progression Markers’ Initiative data challenge organized by Michael J. Fox Foundation in 2016. Dr. Wang is the recipient of the NSF CAREER Award in 2018, the inaugural research leadership award in IEEE International Conference on Health Informatics (ICHI) 2019. Dr. Wang is the chair of the Knowledge Discovery and Data Mining working group in American Medical Informatics Association (AMIA).</li>
+    </ul>
+  </li>
+  <li><a href="">Feixiong Cheng</a>:<br />
+    <ul>
+      <li><strong>Brief biograph.</strong>  Feixiong Cheng, PhD, is a principal investigator with Cleveland Clinic’s Genomic Medicine Institute. Dr. Cheng is working to develop computational and experimental network medicine technologies for advancing the characterization of disease heterogeneity, thereby approaching the goal of coordinated, patient-centered strategies to innovative diagnostics and therapeutics development. The primary goal of Dr. Cheng’s lab is to combine tools from genomics, network medicine, bioinformatics, computational biology, chemical biology, and experimental pharmacology and systems biology assays (e.g., single cell sequencing and iPS-derived cardiomyocytes), to address the challenging questions toward understanding of various human complex diseases (e.g., cardio-oncology, pulmonary vascular diseases, and Alzheimer’s disease), which could have a major impact in identifying novel real-world data-driven diagnostic biomarkers and therapeutic targets for precision medicine. From 2013 to 2017, Dr. Cheng was trained as Postdoctoral Research Fellow in the field of pharmacogenomics and network medicine across Vanderbilt University Medical Center, Northeastern University, and Dana-Farber Cancer Institute. During 2017-2018, Dr. Cheng was promoted to Research Assistant Professor working with two of the world’s leading experts in the field of network medicine, Drs. Albert-Laszlo Barabasi and Joseph Loscalzo, with dual appointment at Northeastern University and Harvard Medical School. Dr. Cheng has received several awards, including NIH Pathway to Independence Award (K99/R00), SCI highly cited papers reward, and Vanderbilt Postdoc of the Year Honorable mention.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="references">References</h2>
+<ol class="bibliography"><li><span id="sun2019infograph">Sun, F.-Y., Hoffmann, J., Verma, V., &amp; Tang, J. (2020). Infograph: Unsupervised and semi-supervised graph-level representation learning via mutual information maximization. <i>ICLR</i>.</span></li>
+<li><span id="shi2020graphaf">Shi, C., Xu, M., Zhu, Z., Zhang, W., Zhang, M., &amp; Tang, J. (2020). GraphAF: a flow-based autoregressive model for molecular graph generation. <i>ICLR</i>.</span></li>
+<li><span id="shhi2020a">Shi, C., Xu, M., Guo, H., Zhang, M., &amp; Tang, J. (2020). A Graph to Graphs Framework for Retrosynthesis Prediction. <i>ICML</i>.</span></li>
+<li><span id="gottipati2020learning">Gottipati, S. K., Sattarov, B., Niu, S., Pathak, Y., Wei, H., Liu, S., Thomas, K. M. J., Blackburn, S., Coley, C. W., Tang, J., &amp; others. (2020). Learning To Navigate The Synthetically Accessible Chemical Space Using Reinforcement Learning. <i>ICML</i>.</span></li>
+<li><span id="jin2018junction">Jin, W., Barzilay, R., &amp; Jaakkola, T. (2018). Junction tree variational autoencoder for molecular graph generation. <i>ICML</i>.</span></li>
+<li><span id="you2018graph">You, J., Liu, B., Ying, Z., Pande, V., &amp; Leskovec, J. (2018). Graph convolutional policy network for goal-directed molecular graph generation. <i>Advances in Neural Information Processing Systems</i>, 6410–6421.</span></li>
+<li><span id="zang2020moflow">Zang, C., &amp; Wang, F. (2020). MoFlow: An Invertible Flow Model for Generating Molecular Graphs. <i>Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining</i>, 617–626.</span></li>
+<li><span id="sun2020graph">Sun, M., Zhao, S., Gilvary, C., Elemento, O., Zhou, J., &amp; Wang, F. (2020). Graph convolutional networks for computational drug development and discovery. <i>Briefings in Bioinformatics</i>, <i>21</i>(3), 919–935.</span></li>
+<li><span id="hu2019strategies">Hu, W., Liu, B., Gomes, J., Zitnik, M., Liang, P., Pande, V., &amp; Leskovec, J. (2019). Strategies for Pre-training Graph Neural Networks. <i>ArXiv Preprint ArXiv:1905.12265</i>.</span></li>
+<li><span id="gilmer2017neural">Gilmer, J., Schoenholz, S. S., Riley, P. F., Vinyals, O., &amp; Dahl, G. E. (2017). Neural message passing for quantum chemistry. <i>ArXiv Preprint ArXiv:1704.01212</i>.</span></li>
+<li><span id="kipf2016semi">Kipf, T. N., &amp; Welling, M. (2016). Semi-supervised classification with graph convolutional networks. <i>ArXiv Preprint ArXiv:1609.02907</i>.</span></li>
+<li><span id="xu2018powerful">Xu, K., Hu, W., Leskovec, J., &amp; Jegelka, S. (2018). How powerful are graph neural networks? <i>ArXiv Preprint ArXiv:1810.00826</i>.</span></li>
+<li><span id="jin2017predicting">Jin, W., Coley, C., Barzilay, R., &amp; Jaakkola, T. (2017). Predicting organic reaction outcomes with weisfeiler-lehman network. <i>Advances in Neural Information Processing Systems</i>, 2607–2616.</span></li>
+<li><span id="schwaller2019molecular">Schwaller, P., Laino, T., Gaudin, T., Bolgar, P., Hunter, C. A., Bekas, C., &amp; Lee, A. A. (2019). Molecular transformer: A model for uncertainty-calibrated chemical reaction prediction. <i>ACS Central Science</i>, <i>5</i>(9), 1572–1583.</span></li>
+<li><span id="sacha2020molecule">Sacha, M., Błaż, M., Byrski, P., Włodarczyk-Pruszyński, P., &amp; Jastrzębski, S. (2020). Molecule Edit Graph Attention Network: Modeling Chemical Reactions as Sequences of Graph Edits. <i>ArXiv Preprint ArXiv:2006.15426</i>.</span></li>
+<li><span id="dai2019retrosynthesis">Dai, H., Li, C., Coley, C., Dai, B., &amp; Song, L. (2019). Retrosynthesis prediction with conditional graph logic network. <i>Advances in Neural Information Processing Systems</i>, 8872–8882.</span></li>
+<li><span id="zhou2020network">Zhou, Y., Hou, Y., Shen, J., Huang, Y., Martin, W., &amp; Cheng, F. (2020). Network-based drug repurposing for novel coronavirus 2019-nCoV/SARS-CoV-2. <i>Cell Discovery</i>, <i>6</i>(1), 1–18.</span></li>
+<li><span id="zeng2019deepdr">Zeng, X., Zhu, S., Liu, X., Zhou, Y., Nussinov, R., &amp; Cheng, F. (2019). deepDR: a network-based deep learning approach to in silico drug repositioning. <i>Bioinformatics</i>, <i>35</i>(24), 5191–5198.</span></li>
+<li><span id="zhou2020artificial">Zhou, Y., Wang, F., Jian, T., R., N., &amp; Cheng, F. (2020). Artificial Intelligence in Drug Repurposing. <i>The Lancet Digital Health</i>.</span></li>
+<li><span id="chen2020idrug">Chen, H., Cheng, F., &amp; Li, J. (2020). iDrug: Integration of drug repositioning and drug-target prediction via cross-network embedding. <i>PLoS Computational Biology</i>, <i>16</i>(7), e1008040.</span></li>
+<li><span id="cheng2019network">Cheng, F., Kovács, I. A., &amp; Barabási, A.-L. (2019). Network-based prediction of drug combinations. <i>Nature Communications</i>, <i>10</i>(1), 1–11.</span></li>
+<li><span id="cheng2018network">Cheng, F., Desai, R. J., Handy, D. E., Wang, R., Schneeweiss, S., Barabási, A.-L., &amp; Loscalzo, J. (2018). Network-based approach to prediction and population-based validation of in silico drug repurposing. <i>Nature Communications</i>, <i>9</i>(1), 1–12.</span></li>
+<li><span id="gysi2020network">Gysi, D. M., Valle, Í. D., Zitnik, M., Ameli, A., Gan, X., Varol, O., Sanchez, H., Baron, R. M., Ghiassian, D., Loscalzo, J., &amp; others. (2020). Network medicine framework for identifying drug repurposing opportunities for covid-19. <i>ArXiv Preprint ArXiv:2004.07229</i>.</span></li>
+<li><span id="zhou2020networkb">Zhou, Y., Hou, Y., Shen, J., Kallianpur, A., Zein, J., Culver, D. A., Farha, S., Comhair, S., Fiocchi, C., Gack, M. U., &amp; others. (2020). A Network Medicine Approach to Investigation and Population-based Validation of Disease Manifestations and Drug Repurposing for COVID-19. <i>ChemRxiv</i>.</span></li></ol>
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        MilaGraph group
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>
