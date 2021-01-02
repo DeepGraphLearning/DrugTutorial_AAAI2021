@@ -1,0 +1,256 @@
+stackbitVersion: ~0.3.0
+ssgName: jekyll
+ssgVersion: '3.8.4'
+buildCommand: bundle exec jekyll build
+publishDir: '_site'
+staticDir: 'assets'
+uploadDir: 'images'
+dataDir: '_data'
+pagesDir: ''
+pageLayoutKey: layout
+
+models:
+  config:
+    type: config
+    label: Site Configuration
+    fields:
+      - type: string
+        name: title
+        required: true
+      - type: string
+        name: baseurl
+        hidden: true
+      - type: string
+        name: permalink
+        label: Permalink
+        description: 'The output path for your pages, posts, or collections.'
+        default: '/posts/:slug:output_ext'
+        hidden: true
+      - type: string
+        name: google_analytics_id
+      - type: object
+        name: homepage
+        fields:
+          - type: boolean
+            name: show_call_box
+      - type: object
+        name: logo
+        fields:
+          - type: image
+            name: desktop
+            required: true
+          - type: image
+            name: mobile
+          - type: string
+            name: desktop_height
+      - type: object
+        name: footer
+        fields:
+          - type: string
+            name: copyright_text
+      - type: object
+        name: seo
+        fields:
+          - type: string
+            name: meta_description
+            label: meta_description
+          - type: string
+            name: meta_og_title
+            label: meta_og_title
+          - type: string
+            name: meta_og_type
+            label: meta_og_type
+          - type: string
+            name: meta_og_url
+            label: meta_og_url
+          - type: string
+            name: meta_og_image
+            label: meta_og_image
+          - type: string
+            name: meta_og_description
+            label: meta_og_description
+          - type: string
+            name: meta_twitter_card
+            label: meta_twitter_card
+          - type: string
+            name: meta_twitter_site
+            label: meta_twitter_site
+          - type: string
+            name: meta_twitter_creator
+            label: meta_twitter_creator
+      - type: object
+        name: collections
+        fields:
+          - type: object
+            name: services
+            fields:
+              - type: boolean
+                name: output
+              - type: string
+                name: permalink
+          - type: object
+            name: team
+            fields:
+              - type: boolean
+                name: output
+              - type: string
+                name: permalink
+      - type: object
+        name: sass
+        label: Sass
+        hidden: true
+        fields:
+          - type: number
+            name: indentWidth
+            label: Indent Width
+            description: >-
+              Used to determine the number of spaces or tabs to be used for
+              indentation.
+            default: 4
+          - type: enum
+            name: style
+            label: Output Style
+            description: Determines the output format of the final CSS style.
+            options:
+              - nested
+              - expanded
+              - compact
+              - compressed
+            default: nested
+          - type: number
+            name: precision
+            label: Precision
+            description: >-
+              Used to determine how many digits after the decimal will be
+              allowed.
+            default: 10
+      - type: list
+        name: plugins
+        label: Plugins
+        hidden: true
+      - type: list
+        name: exclude
+        label: Exclude
+        description: Exclude directories and/or files from the conversion.
+        hidden: true
+  home:
+    type: page
+    label: Home
+    layout: home
+    fields:
+      - type: string
+        name: title
+        required: true
+      - type: string
+        name: description
+      - type: image
+        name: intro_image
+        description: Image displayed at in the pages intro section
+      - type: boolean
+        name: intro_image_absolute
+        description: Should the image overflow or be contained
+      - type: boolean
+        name: intro_image_hide_on_mobile
+        description: Hide the intro image on mobile screen sizes
+  page:
+    type: page
+    label: Page
+    layout: page
+    fields:
+      - type: string
+        name: title
+      - type: date
+        name: date
+      - type: string
+        name: bodyClass
+  contact:
+    type: page
+    label: Contact
+    layout: contact
+    fields:
+      - type: string
+        name: title
+      - type: date
+        name: date
+      - type: string
+        name: bodyClass
+  service:
+    type: page
+    label: Service
+    layout: service
+    fields:
+      - type: string
+        name: title
+      - type: date
+        name: date
+      - type: boolean
+        name: featured
+      - type: number
+        name: weight
+  services:
+    type: page
+    label: Services
+    layout: services
+    fields:
+      - type: string
+        name: title
+        required: true
+      - type: image
+        name: intro_image
+        label: Intro Image
+        description: Image displayed at in the pages intro section
+      - type: boolean
+        name: intro_image_absolute
+        label: Intro Image Position
+        description: Should the image overflow or be contained
+      - type: boolean
+        name: intro_image_hide_on_mobile
+        label: Hide Intro Image On Mobile?
+        description: Hide the intro image on mobile screen sizes
+  team:
+    type: page
+    label: Team
+    folder: team
+    exclude: _index.md
+    layout: team
+    fields:
+      - type: string
+        name: title
+      - type: date
+        name: date
+      - type: image
+        name: image
+      - type: string
+        name: jobtitle
+      - type: string
+        name: linkedinurl
+      - type: boolean
+        name: draft
+      - type: boolean
+        name: featured
+      - type: number
+        name: weight
+      - type: boolean
+        name: promoted
+  teams:
+    type: page
+    label: Teams
+    layout: teams
+    fields:
+      - type: string
+        name: title
+        required: true
+      - type: string
+        name: permalink
+      - type: image
+        name: intro_image
+        label: Intro Image
+        description: Image displayed at in the pages intro section
+      - type: boolean
+        name: intro_image_absolute
+        label: Intro Image Position
+        description: Should the image overflow or be contained
+      - type: boolean
+        name: intro_image_hide_on_mobile
+        label: Hide Intro Image On Mobile?
+        description: Hide the intro image on mobile screen sizes
