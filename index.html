@@ -79,8 +79,11 @@
 Artificial intelligence has the potential to significantly accelerate the process of drug discovery by analyzing a large amount of data generated in the biomedical domain such as bioassays, chemical experiments, and biomedical literature.
 Recently, there is a growing interesting in developing AI techniques for drug discovery in many different communities including machine learning, data mining, and biomedical community. In this tutorial, we will provide a detailed introduction to key problems in drug discovery such as molecular property prediction, de novo molecular design and molecular optimization, retrosynthesis reaction and prediction, and drug repurposing and combination, and also key technique advancements with artificial intelligence for these problems. This tutorial can be served as introduction materials for both computer scientist interested in drug discovery as well as drug discovery practitioners for learning the latest AI techniques along this direction.</p>
 
+<h2 id="slides">Slides</h2>
+<p>The slides can be found <a href="https://drive.google.com/file/d/1eMhDMw1nIXIVM__kLTWrhuc5WzEv7pWs/view?usp=sharing">here</a>.</p>
+
 <h2 id="outline">Outline</h2>
-<p>The proposed tutorial would be 3.5 hours in length, and you can find the slides <a href="https://drive.google.com/file/d/1eMhDMw1nIXIVM__kLTWrhuc5WzEv7pWs/view?usp=sharing">here</a>.
+<p>The proposed tutorial would be 3.5 hours in length.
 An outline of the tutorial (including an approximate breakdown by presenter) is as follows:</p>
 
 <ul>
@@ -88,35 +91,38 @@ An outline of the tutorial (including an approximate breakdown by presenter) is 
   <li>Deep Learning, Traditional Network-based Methods, Graph Representation Learning [15 min, presented by Fei]
     <ul>
       <li>Convolutional Neural Networks and Recurrent Neural Networks</li>
-      <li>Graph Convolutional Networks [GCN <a class="citation" href="#kipf2016semi">(Kipf &amp; Welling, 2016)</a>, MPNN <a class="citation" href="#gilmer2017neural">(Gilmer et al., 2017)</a>, GIN<a class="citation" href="#xu2018powerful">(Xu et al., 2018)</a>]</li>
+      <li>Graph Convolutional Networks [GCN <a class="citation" href="#kipf2016semi">(Kipf &amp; Welling, 2016)</a>, MPNN <a class="citation" href="#gilmer2017neural">(Gilmer et al., 2017)</a>, GIN <a class="citation" href="#xu2018powerful">(Xu et al., 2018)</a>]</li>
     </ul>
   </li>
   <li>Molecule Properties Prediction [30 min, presented by Jian]
     <ul>
-      <li>Variational autoencoder-based approach <a class="citation" href="#jin2018junction">(Jin et al., 2018)</a></li>
-      <li>Autoregressive methods [GCPN <a class="citation" href="#you2018graph">(You et al., 2018)</a>]</li>
-      <li>Normalizing Flow-based approaches [GraphAF <a class="citation" href="#shi2020graphaf">(Shi et al., 2020)</a>, MoFlow <a class="citation" href="#zang2020moflow">(Zang &amp; Wang, 2020)</a>]</li>
+      <li>Supervised [MPNN <a class="citation" href="#gilmer2017neural">(Gilmer et al., 2017)</a>]</li>
+      <li>Self-supervised [ContextPred <a class="citation" href="#hu2019strategies">(Hu et al., 2019)</a>, InfoGraph <a class="citation" href="#sun2019infograph">(Sun et al., 2020)</a>]</li>
+      <li>Semi-supervised [InfoGraph <a class="citation" href="#sun2019infograph">(Sun et al., 2020)</a>]</li>
     </ul>
   </li>
-  <li>De novo Molecule Generation and Optimization. [40 min, presented by Jian and Fei]
+  <li>De novo Molecule Generation and Optimization [40 min, presented by Jian and Fei]
     <ul>
       <li>Variational autoencoder-based approach [JTVAE <a class="citation" href="#jin2018junction">(Jin et al., 2018)</a>]</li>
       <li>Autoregressive methods [GCPN <a class="citation" href="#you2018graph">(You et al., 2018)</a>]</li>
       <li>Normalizing Flow-based approaches [GraphAF <a class="citation" href="#shi2020graphaf">(Shi et al., 2020)</a>, MoFlow <a class="citation" href="#zang2020moflow">(Zang &amp; Wang, 2020)</a>]</li>
     </ul>
   </li>
-  <li>Reaction Prediction and Retrosynthesis. [30 min, presented by Jian]
+  <li>Reaction Prediction and Retrosynthesis [30 min, presented by Jian]
     <ul>
-      <li>Reaction prediction <a class="citation" href="#jin2017predicting">(Jin et al., 2017)</a> <a class="citation" href="#schwaller2019molecular">(Schwaller et al., 2019)</a> <a class="citation" href="#sacha2020molecule">(Sacha et al., 2020)</a>
-        <ul>
-          <li>Retrosynthesis <a class="citation" href="#dai2019retrosynthesis">(Dai et al., 2019)</a> <a class="citation" href="#shhi2020a">(Shi et al., 2020)</a> <a class="citation" href="#sacha2020molecule">(Sacha et al., 2020)</a></li>
-        </ul>
-      </li>
+      <li>Reaction prediction [<a class="citation" href="#jin2017predicting">(Jin et al., 2017)</a>, <a class="citation" href="#schwaller2019molecular">(Schwaller et al., 2019)</a>, <a class="citation" href="#sacha2020molecule">(Sacha et al., 2020)</a>]</li>
+      <li>Retrosynthesis [<a class="citation" href="#dai2019retrosynthesis">(Dai et al., 2019)</a>, <a class="citation" href="#shhi2020a">(Shi et al., 2020)</a>, <a class="citation" href="#sacha2020molecule">(Sacha et al., 2020)</a>]</li>
     </ul>
   </li>
-  <li>Multiomics and Clinical Data-based Drug Repurposing. [45 min, presented by Feixiong and Fei]</li>
-  <li>Other Topics. [15 min, presented by Fei]</li>
-  <li>Conclusion and Future Directions. [15 min, presented by Fei]</li>
+  <li>Multiomics and Clinical Data-based Drug Repurposing [45 min, presented by Feixiong and Fei]
+    <ul>
+      <li>Network-based approach [<a class="citation" href="#cheng2018network">(Cheng et al., 2018)</a>]</li>
+      <li>Graph Neural Network-based approach [<a class="citation" href="#gysi2020network">(Gysi et al., 2020)</a> ]</li>
+      <li>Case Study on COVID-19 [<a class="citation" href="#zhou2020networkb">(Zhou et al., 2020)</a>, <a class="citation" href="#gysi2020network">(Gysi et al., 2020)</a>]</li>
+    </ul>
+  </li>
+  <li>Other Topics [15 min, presented by Fei]</li>
+  <li>Conclusion and Future Directions [15 min, presented by Fei]</li>
 </ul>
 
 <h2 id="organizers">Organizers</h2>
